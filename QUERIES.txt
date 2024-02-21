@@ -1,0 +1,103 @@
+LESSON 1
+
+
+LESSON 3
+
+
+LESSON 4
+
+-- SELECT distinct Director FROM movies order by Director ;
+-- SELECT * FROM movies order by year desc limit 4;
+-- SELECT * FROM movies order by Title limit 5;
+SELECT * FROM movies order by Title limit 5 offset 5;
+
+LESSON 5
+
+-- SELECT * FROM north_american_cities where Country="Canada";
+-- SELECT * FROM north_american_cities where Country="United States" order by latitude desc;
+-- SELECT * FROM north_american_cities where longitude<-87.629798 order by longitude ;
+-- SELECT * FROM north_american_cities where Country="Mexico" order by Population desc limit 2;
+SELECT * FROM north_american_cities where Country="United States" order by Population desc limit 2 offset 2;
+
+LESSON 6
+
+SELECT  * FROM movies inner join Boxoffice on Movies.Id=Boxoffice.Movie_id ;
+
+SELECT  * FROM movies inner join Boxoffice on Movies.Id=Boxoffice.Movie_id where Domestic_sales<International_sales; 
+
+SELECT  * FROM movies inner join Boxoffice on Movies.Id=Boxoffice.Movie_id order by Rating desc;
+
+
+LESSON 7
+
+-- SELECT Distinct Building FROM employees left join Buildings on employees.Building=Buildings.Building_name;
+-- SELECT * from Buildings;
+SELECT DISTINCT Building_name,Role FROM Buildings left join Employees on employees.Building=Buildings.Building_name;
+
+LESSON 8
+
+-- SELECT * FROM Employees left join Buildings on employees.Building=Buildings.Building_name WHERE Building IS NULL;
+SELECT * FROM Buildings left join Employees on employees.Building=Buildings.Building_name WHERE Name IS NULL;
+
+LESSON 9
+SELECT TITLE,(Domestic_sales+International_sales)/1000000 AS combined_sales FROM movies LEFT JOIN Boxoffice on Movies.Id=Boxoffice.Movie_id;
+
+SELECT Title,(Rating*10) As ratings_percent FROM movies LEFT JOIN Boxoffice on Movies.Id=Boxoffice.Movie_id;
+
+SELECT Title,year FROM movies LEFT JOIN Boxoffice on Movies.Id=Boxoffice.Movie_id where (year%2==0);
+
+
+
+LESSON 10
+SELECT Name,Max(Years_employed) FROM employees;
+select Role,AVG(Years_employed) AS Average_number_of_years from employees GROUP BY Role;
+select Building,SUM(Years_employed) As Total_Number_of_employees from Employees GROUP BY Building  ;
+
+
+LESSON 11
+
+
+LESSON 12
+
+
+
+LESSON 13
+
+
+
+
+LESSON 14
+
+
+
+LESSON 15
+
+
+LESSON 16
+
+
+
+LESSON 17
+
+
+
+LESSON 18
+
+
+LESSON 19
+
+
+LESSON 21
+
+
+
+LESSON 22
+
+
+
+LESSON 23
+
+
+LESSON 24
+
+
