@@ -1,7 +1,25 @@
 LESSON 1
 
+-- SELECT Title FROM movies;
+-- SELECT Director From Movies
+-- SELECT Director,Title FROM Movies;
+-- SELECT Title,Year FROM Movies;
+SELECT * FROM Movies;
+
+
+LESSON 2
+
+-- SELECT * FROM movies Where Id=6;
+-- SELECT * FROM Movies Where Year Between 2000 AND 2010;
+-- SELECT * FROM Movies Where Year NOT Between 2000 AND 2010;
+SELECT * FROM Movies WHERE Id<6;
 
 LESSON 3
+
+-- SELECT * FROM movies WHERE Title Like "Toy%";
+-- SELECT * FROM Movies Where Director="John Lasseter";
+-- SELECT Title,Director FROM Movies Where Director!="John Lasseter";
+SELECT * FROM Movies Where Title Like "WALL-%"
 
 
 LESSON 4
@@ -55,49 +73,50 @@ select Building,SUM(Years_employed) As Total_Number_of_employees from Employees 
 
 
 LESSON 11
+SELECT Role,count(Name) AS Number_of_Artists FROM employees where Role="Artist";
+SELECT Role, count(Name) From Employees Group By Role;
+SELECT Role,SUM(years_employed) FROM EMPLOYEES Where Role="Engineer";
 
 
 LESSON 12
-
-
+SELECT Director, COUNT(Title) FROM movies Group By Director;
+SELECT DIRECTOR,SUM(Domestic_sales+International_sales)  FROM Movies LEFT JOIN Boxoffice on Movies.Id=Boxoffice.Movie_Id GROUP BY Director;
 
 LESSON 13
+INSERT INTO movies (Title, Director, Year, Length_minutes)
+VALUES ('Toy Story 4', 'Josh Cooley', 2019, 1000);
 
+INSERT INTO Boxoffice (Movie_id,Rating,Domestic_sales,International_sales) VALUES(15,8.7,340000000,270000000)
 
 
 
 LESSON 14
 
+UPDATE Movies SET Director="John Lasseter" where Title="A Bug's Life"
 
+UPDATE Movies SET Year="1999" where Title="Toy Story 2"
+
+UPDATE Movies SET Title="Toy Story 3",Director="Lee Unkrich" Where Title="Toy Story 8"
 
 LESSON 15
 
+Delete From Movies where Year<2005;
+
+Delete From Movies Where Director="Andrew Stanton"
 
 LESSON 16
 
-
+CREATE TABLE Database (id INTEGER PRIMARY KEY, Name TEXT, Version FLOAT,Download_count INTEGER);
 
 LESSON 17
 
+ALTER TABLE Movies ADD Aspect_ratio FLOAT;
 
+ALTER TABLE Movies ADD Language TEXT DEFAULT "English";
 
 LESSON 18
 
+DROP TABLE Movies;
 
-LESSON 19
-
-
-LESSON 21
-
-
-
-LESSON 22
-
-
-
-LESSON 23
-
-
-LESSON 24
-
+DROP TABLE BoxOffice
 
